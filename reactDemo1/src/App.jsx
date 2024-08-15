@@ -1,35 +1,28 @@
-import { useState } from "react"; //useState accepts an initial state 
-//and returns two values: current state and function that update the state
+import { useState } from "react"; 
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 function App() {
 
-  const [name, setName] = useState("Clarisse"); //when you put a parameter in here it is the value na mareturn. how do we insert variable in html, we use curly braces {name}? then declare name as "john" here 
-  const [counter, setCounter] = useState(0); //
+
   return (
-   //can put conditional inside the return 
-      <>
-      <h1>Hello, {name}</h1>  
-      <h1 style={{color: "green"}}>{counter}</h1>
-      <button onClick= {() => {
-        setCounter(counter+1)
-      }}>CLICK ME</button>
-
-{/* conditional Render */}
-      {counter > 10 ? (<h1>Congratulations!</h1>) : (<h1>Not Yet</h1>)
-      }
-      <button onClick={() =>
-        setName("World!")
-      }>
-      Change Name</button>
-
-{/* use of Onchange using e.target.value */}
-<input type="text"onChange={(e) =>{
-  setName(e.target.value)
-}} />
-      </>
-
+  
+    <div className="container mt-5 p-5">
+      <h1 className="text-primary fw-bold">To do List</h1>
       
-     
+        <label htmlFor="newTodo"> Add new task here... </label>
+        <input type="text" className="form-control" />  
+        <button className="btn btn-primary mt-2">Add Task</button>
+    
+    <div className="card mt-3 p-3">
+<div className="alert bg-light my-2" >This is the todo list item</div>
+<div className="alert bg-light my-2" >This is the todo list item</div>
+<div className="alert bg-light my-2" >This is the todo list item</div>
+    </div>
+    </div>
+  
+      
+  
   );
 }
 
